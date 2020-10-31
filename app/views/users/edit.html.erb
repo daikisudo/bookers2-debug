@@ -1,8 +1,8 @@
 <h2>User info</h2>
 
+<% @user = User.new unless @user %>
 <%= form_for(@user) do |f| %>
 
-	<!-- エラーメッセージ表示-->
 	<% if @user.errors.any? %>
 		<div id="error_explanation">
 			<h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3><
@@ -13,11 +13,11 @@
 			</ul>
 		</div>
 	<% end %>
-	<!-- エラーメッセージ表示-->
+
 
 	<div class="field">
-		<%= f.label :title %>
-		<%= f.text_field :title, class: "name" %>
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "name" %>
 	</div>
 
 	<div class="field">
